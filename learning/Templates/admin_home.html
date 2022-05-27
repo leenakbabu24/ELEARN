@@ -1,0 +1,52 @@
+{% load static %}
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static 'home.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body background="{% static 'register.jpg' %}">
+
+<div class="navbar">
+    <a href="{% url 'adm_prof' %}">UPDATE PROFILE</a>
+ <a href="{% url 'blogs_admin' %}">BLOGS</a>
+
+ <div class="dropdown">
+    <button class="dropbtn">CERTIFICATE
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="{% url 'upl_cer' %}">UPLOAD</a>
+      <a href="{% url 'del_cert' %}">DELETE</a>
+    </div>
+ </div>
+   <a href="{% url 'abb' %}">ABOUT WEBSITE</a>
+     <a href="{% url 'block' %}">BLOCK MEMBER</a>
+    <a href="{% url 'feedbak' %}">FEEDBACKS</a>
+    <div class="dropdown">
+    <button class="dropbtn">MESSAGES
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="{% url 'm_m' %}">MEMBER</a>
+      <a href="{% url 'g_m' %}">GUEST</a>
+    </div>
+ </div>
+    <div class="dropdown">
+    <button class="dropbtn">TOPICS
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="{% url 'subject_ad' %}">SUBJECT</a>
+      <a href="{% url 'chapter_ad' %}">CHAPTER</a>
+        <a href="{% url 'chap_content' %}">CHAPTER CONTENT</a>
+    </div>
+ </div>
+     <a href="{% url 'logout' %}" onclick="return confirm('Are you sure?')">LOGOUT</a>
+</div>
+</div>
+<h1 style="text-align:center">ADMIN HOME</h1>
+</body>
+</html>

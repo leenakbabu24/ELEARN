@@ -1,0 +1,35 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+
+</head>
+<h1 style="text-align:center">BLOG</h1>
+<body class= "pic" background="{% static 'register.jpg' %}">
+<form method="post" action="{% url 'add_blog' %}" enctype="multipart/form-data">
+ {% csrf_token %}
+ <div style="text-align:center">
+            <input type="text" size="25" placeholder="Enter name" name="Name" required><br><br>
+            <textarea rows="9" cols="50"  placeholder="Enter blog content" name="Blog_content" required></textarea>  <br><br>
+            <label for="photo"><b>Photo</b></label><br><br>
+            <input type="file" size="10" name="photo" required><br><br>
+            <input type="date"  name="Date_blog" placeholder="Enter today's date" required><br><br>
+  <button type="submit" class="submitbtn">Submit</button>
+     </div>
+</form>
+<div align="center">
+   <button type="submit" onclick="location.href='{% url 'home' %}'" name='mybtn2'>Back</button>
+</div>
+
+<div style="color:blue;" align="center">
+    {% if messages %}
+        {% for msg in messages %}
+                {{ msg }}
+        {% endfor %}
+    {% endif %}
+</div>
+
+</body>
+</html>

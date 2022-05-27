@@ -1,0 +1,27 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+    <title>Title</title>
+</head>
+<body background="{% static 'register.jpg' %}">
+<h1 style="text-align:center">ABOUT US</h1>
+<h2 style="text-align:center">BOOK YOUR COURSES AND LEARN FROM IT!!</h2>
+<h3 style="text-align:center">{{w.About_website}}</h3>
+
+<h3 style="text-align:center">OUR TEAM</h3>
+<div align="center">
+{% for i in k %}
+<img src="{{i.Image.url}}">
+    <h3>FIRSTNAME:{{i.First_name}}</h3>
+   <h3>LASTNAME:{{i.Last_name}}</h3>
+<p>QUALIFICATION:{{i.Qualification}}<p>
+    <p>BRIEF INTRO:{{i.Introduction_brief}}</p>
+    <label>EMAIL:{{i.Email}}</label>
+<br><br>
+{% endfor %}
+</div>
+</body>
+</html>

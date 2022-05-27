@@ -1,0 +1,41 @@
+{% load static %}
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static 'home.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body background="{% static 'register.jpg' %}">
+
+<div class="navbar">
+    <a href="{% url 'st_book_courses' %}">BOOKED COURSES</a>
+  <a href="{% url 'stu_sub_selnew' %}">BOOK A COURSE</a>
+  <a href="{% url 'do_cer' %}">DOWNLOAD CERTIFICATE</a>
+ <a href="{% url 'update_pr_st' %}">MY PROFILE</a>
+    <a href="{% url 'feedback' %}">FEEDBACKS</a>
+ <div class="dropdown">
+    <button class="dropbtn">EXAMS
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="{% url 'ex_not' %}">EXAM NOTIFICATION</a>
+      <a href="{% url 'start_test' %}">START TEST</a>
+      <a href="{% url 'exam_result' %}">EXAM RESULTS</a>
+    </div>
+ </div>
+   <a href="{% url 'm_m2' %}">MESSAGES</a>
+     <a href="{% url 'logout' %}" onclick="return confirm('Are you sure?')">LOGOUT</a>
+</div>
+</div>
+<h1 style="text-align:center">STUDENT HOME</h1>
+<div style="color:blue;font-size:200%;" align="center">
+        {% if messages %}
+            {% for msg in messages %}
+                    {{ msg }}
+            {% endfor %}
+        {% endif %}
+</div>
+</body>
+</html>
